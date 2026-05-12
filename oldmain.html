@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Barbie Fashion Co — Robe Signature</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Lilita+One&family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #ff3eaa;
+    --pink-hot: #ff1493;
+    --pink-deep: #e91e8c;
+    --pink-light: #ffc8e4;
+    --pink-soft: #ffe6f4;
+    --pink-pastel: #fff0f8;
+    --white: #ffffff;
+    --text-on-pink: #ffffff;
+    --text-on-white: #ff1493;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Yearbook Solid', 'Bowlby One', 'Lilita One', 'Poppins', sans-serif;
+    background: var(--pink);
+    color: var(--white);
+    overflow-x: hidden;
+    font-size: 18px;
+  }
+
+  .body-text { font-family: 'Poppins', sans-serif; font-weight: 500; }
+  .script { font-family: 'Pacifico', cursive; }
+
+  /* ===========================================================
+     SECTION 1 — INTRODUCTION
+  =========================================================== */
+  .intro {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--pink) 0%, var(--pink-hot) 100%);
+    color: var(--white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px;
+    gap: 60px;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 6px solid var(--white);
+  }
+
+  .intro::before {
+    content: "";
+    position: absolute;
+    top: -150px; right: -150px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: var(--white);
+    opacity: 0.12;
+  }
+
+  .intro::after {
+    content: "";
+    position: absolute;
+    bottom: -180px; left: -150px;
+    width: 460px; height: 460px;
+    border-radius: 50%;
+    background: var(--white);
+    opacity: 0.08;
+  }
+
+  .sparkle {
+    position: absolute;
+    font-size: 2.2rem;
+    color: var(--white);
+    z-index: 1;
+    animation: twinkle 3s ease-in-out infinite;
+  }
+  .sparkle.s1 { top: 14%; left: 6%; }
+  .sparkle.s2 { top: 72%; right: 8%; animation-delay: 0.8s; }
+  .sparkle.s3 { bottom: 18%; left: 40%; animation-delay: 1.6s; }
+  .sparkle.s4 { top: 32%; right: 32%; animation-delay: 2.4s; }
+
+  @keyframes twinkle {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.7; }
+    50% { transform: scale(1.3) rotate(180deg); opacity: 1; }
+  }
+
+  .intro-text {
+    position: relative;
+    z-index: 2;
+  }
+
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--white);
+    color: var(--pink-hot);
+    padding: 14px 28px;
+    border-radius: 999px;
+    margin-bottom: 36px;
+    box-shadow: 8px 8px 0 rgba(255, 255, 255, 0.25);
+  }
+
+  .logo-mark {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
+  .logo-text {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .intro h1 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.92;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+    text-shadow: 6px 6px 0 var(--pink-deep);
+  }
+
+  .intro h1 .accent {
+    font-family: 'Pacifico', cursive;
+    color: var(--pink-pastel);
+    text-transform: none;
+    font-weight: normal;
+    display: inline-block;
+    transform: rotate(-3deg);
+    text-shadow: 4px 4px 0 var(--pink-deep);
+  }
+
+  .catchphrase {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--white);
+    line-height: 1.5;
+    max-width: 580px;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  .catchphrase::before,
+  .catchphrase::after { content: "✦ "; color: var(--white); }
+
+  .intro-cta {
+    display: inline-block;
+    background: var(--white);
+    color: var(--pink-hot);
+    padding: 22px 52px;
+    text-decoration: none;
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    box-shadow: 8px 8px 0 var(--pink-deep);
+    transition: all 0.25s ease;
+  }
+
+  .intro-cta:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--pink-deep);
+  }
+
+  .intro-image {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .intro-image-frame {
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 4/5;
+    border: 8px solid var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 20px 20px 0 rgba(255, 255, 255, 0.3);
+    transform: rotate(2deg);
+    background: var(--pink-light);
+  }
+
+  .intro-image-frame img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+
+  /* ===========================================================
+     SECTION 2 — MAIN POINT (Product)
+  =========================================================== */
+  .main-point {
+    background: var(--pink-pastel);
+    color: var(--pink-hot);
+    border-bottom: 6px solid var(--white);
+  }
+
+  .product-header {
+    text-align: center;
+    padding: 120px 80px 60px;
+    background: var(--pink-pastel);
+  }
+
+  .product-header .script-tag {
+    font-family: 'Pacifico', cursive;
+    color: var(--pink-hot);
+    font-size: 2.4rem;
+    display: block;
+    margin-bottom: 12px;
+    transform: rotate(-2deg);
+  }
+
+  .product-header h2 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--pink-hot);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+  }
+
+  .product-header p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--pink-deep);
+    font-size: 1.35rem;
+    max-width: 760px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Subsection 2A — Spotlight */
+  .product-spotlight {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: center;
+    padding: 80px 80px 100px;
+    background: var(--pink-pastel);
+  }
+
+  .spotlight-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    height: 720px;
+  }
+
+  .spotlight-images .big {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+  }
+
+  .spotlight-img {
+    overflow: hidden;
+    border: 6px solid var(--white);
+    border-radius: 18px;
+    background: var(--pink-light);
+    box-shadow: 12px 12px 0 var(--pink);
+    transition: transform 0.3s ease;
+  }
+
+  .spotlight-img:hover { transform: translateY(-6px); }
+  .spotlight-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Single image variant for spotlight (no grid split) */
+  .spotlight-single {
+    height: 720px;
+    overflow: hidden;
+    border: 8px solid var(--white);
+    border-radius: 24px;
+    box-shadow: 18px 18px 0 var(--pink);
+    background: var(--pink-light);
+    transform: rotate(-1.5deg);
+  }
+
+  .spotlight-single img { width: 100%; height: 100%; object-fit: cover; }
+
+  .spotlight-info .pill {
+    display: inline-block;
+    background: var(--pink-hot);
+    color: var(--white);
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .spotlight-info h3 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: clamp(2.6rem, 4.5vw, 4rem);
+    color: var(--pink-hot);
+    text-transform: uppercase;
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  .spotlight-info .price {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: 2.4rem;
+    color: var(--pink-hot);
+    margin-bottom: 28px;
+  }
+
+  .spotlight-info p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--pink-deep);
+    font-size: 1.3rem;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .spotlight-features {
+    list-style: none;
+    margin-bottom: 36px;
+  }
+
+  .spotlight-features li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--pink-hot);
+    font-size: 1.2rem;
+    padding: 12px 0 12px 32px;
+    position: relative;
+    border-bottom: 2px dashed var(--pink-light);
+  }
+
+  .spotlight-features li::before {
+    content: "♥";
+    position: absolute;
+    left: 0;
+    color: var(--pink-hot);
+    font-size: 1.3rem;
+  }
+
+  .spotlight-cta {
+    display: inline-block;
+    background: var(--pink-hot);
+    color: var(--white);
+    padding: 22px 52px;
+    text-decoration: none;
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 999px;
+    box-shadow: 8px 8px 0 var(--pink-deep);
+    transition: all 0.25s ease;
+  }
+
+  .spotlight-cta:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0 var(--pink-deep);
+  }
+
+  /* Subsection 2B — Gallery / 360° angles */
+  .product-angles {
+    padding: 100px 80px 140px;
+    background: linear-gradient(180deg, var(--pink-pastel) 0%, var(--pink-light) 100%);
+    text-align: center;
+  }
+
+  .product-angles .script-tag {
+    font-family: 'Pacifico', cursive;
+    color: var(--pink-hot);
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .product-angles h3 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+    color: var(--pink-hot);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .product-angles > p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--pink-deep);
+    max-width: 700px;
+    margin: 0 auto 70px;
+    line-height: 1.6;
+  }
+
+  .angles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 36px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .angle-card {
+    background: var(--white);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 14px 14px 0 var(--pink-hot);
+    transition: transform 0.3s ease;
+  }
+
+  .angle-card:hover { transform: translateY(-10px); }
+
+  .angle-card-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    background: var(--pink-light);
+  }
+
+  .angle-card-img img { width: 100%; height: 100%; object-fit: cover; }
+
+  .angle-card-caption {
+    padding: 22px 24px;
+    text-align: center;
+  }
+
+  .angle-card-caption .label {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    color: var(--pink-hot);
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .angle-card-caption .desc {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--pink-deep);
+    font-size: 1.05rem;
+  }
+
+  /* ===========================================================
+     SECTION 3 — CONCLUSION (Specs + Legal)
+  =========================================================== */
+  .conclusion {
+    background: var(--pink-hot);
+    color: var(--white);
+    padding: 140px 80px 60px;
+  }
+
+  .conclusion-header {
+    text-align: center;
+    margin-bottom: 90px;
+  }
+
+  .conclusion-header .script-tag {
+    font-family: 'Pacifico', cursive;
+    color: var(--white);
+    font-size: 2.2rem;
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .conclusion-header h2 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: clamp(3rem, 6vw, 5rem);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-bottom: 18px;
+    text-shadow: 5px 5px 0 var(--pink-deep);
+  }
+
+  .conclusion-header p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--white);
+    font-size: 1.3rem;
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+    max-width: 1400px;
+    margin: 0 auto 80px;
+  }
+
+  .spec-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 36px 28px;
+    color: var(--pink-hot);
+    box-shadow: 10px 10px 0 var(--pink-deep);
+  }
+
+  .spec-card .icon {
+    font-size: 2.6rem;
+    margin-bottom: 16px;
+    display: block;
+  }
+
+  .spec-card h4 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: 1.3rem;
+    color: var(--pink-hot);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  .spec-card p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--pink-deep);
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .details-table {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    background: var(--white);
+    border-radius: 24px;
+    padding: 50px 60px;
+    color: var(--pink-hot);
+    box-shadow: 14px 14px 0 var(--pink-deep);
+  }
+
+  .details-table h3 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    font-size: 2rem;
+    color: var(--pink-hot);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+    text-align: center;
+  }
+
+  .details-table dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 16px 32px;
+  }
+
+  .details-table dt {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    color: var(--pink-hot);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.05rem;
+    padding-top: 4px;
+  }
+
+  .details-table dd {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: var(--pink-deep);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    border-bottom: 2px dashed var(--pink-light);
+    padding-bottom: 12px;
+  }
+
+  .legal {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 36px 40px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px dashed var(--white);
+    border-radius: 16px;
+  }
+
+  .legal h4 {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    color: var(--white);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+  }
+
+  .legal p {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 12px;
+    opacity: 0.95;
+  }
+
+  .legal p:last-child { margin-bottom: 0; }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.3);
+    padding-top: 36px;
+    margin-top: 40px;
+  }
+
+  .footer-bottom .brand {
+    font-family: 'Yearbook Solid', 'Bowlby One', sans-serif;
+    color: var(--white);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+  }
+
+  .footer-bottom .copy {
+    font-family: 'Poppins', sans-serif;
+    color: var(--white);
+    font-size: 1rem;
+    opacity: 0.85;
+  }
+
+  /* ===========================================================
+     RESPONSIVE
+  =========================================================== */
+  @media (max-width: 1100px) {
+    .specs-grid { grid-template-columns: repeat(2, 1fr); }
+    .angles-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 900px) {
+    .intro {
+      grid-template-columns: 1fr;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .catchphrase { margin-left: auto; margin-right: auto; }
+    .product-header, .product-spotlight, .product-angles, .conclusion {
+      padding-left: 24px; padding-right: 24px;
+    }
+    .product-spotlight {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .spotlight-images, .spotlight-single { height: 520px; }
+    .angles-grid { grid-template-columns: 1fr; }
+    .specs-grid { grid-template-columns: 1fr; }
+    .details-table { padding: 30px 24px; }
+    .details-table dl { grid-template-columns: 1fr; gap: 6px 0; }
+    .details-table dt { padding-top: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===========================================================
+     SECTION 1 — INTRODUCTION
+=========================================================== -->
+<section class="intro">
+  <div class="sparkle s1">✦</div>
+  <div class="sparkle s2">✿</div>
+  <div class="sparkle s3">✦</div>
+  <div class="sparkle s4">✿</div>
+
+  <div class="intro-text">
+    <div class="logo">
+      <span class="logo-mark">♥</span>
+      <span class="logo-text">Barbie Fashion Co</span>
+    </div>
+
+    <h1>Soyez la <span class="accent">star</span> de demain</h1>
+
+    <p class="catchphrase">Vivez la mode. Brillez de mille feux. Soyez vous-même.</p>
+
+    <a href="#product" class="intro-cta">Découvrir ♥</a>
+  </div>
+
+  <div class="intro-image">
+    <div class="intro-image-frame">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1000&h=1200&fit=crop" alt="Égérie Barbie Fashion Co">
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     SECTION 2 — MAIN POINT (Robe Signature)
+=========================================================== -->
+<section class="main-point" id="product">
+
+  <div class="product-header">
+    <span class="script-tag">~ le produit phare ~</span>
+    <h2>La Robe Signature</h2>
+    <p>L'icône absolue de la collection 2026. Une silhouette intemporelle, conçue à la main dans nos ateliers parisiens, pour célébrer toutes les femmes audacieuses.</p>
+  </div>
+
+  <!-- Subsection 2A — Spotlight -->
+  <div class="product-spotlight">
+    <div class="spotlight-single">
+      <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=1000&h=1300&fit=crop" alt="Robe Signature en gros plan">
+    </div>
+
+    <div class="spotlight-info">
+      <span class="pill">★ Édition Limitée ★</span>
+      <h3>Robe Signature</h3>
+      <div class="price">189 €</div>
+      <p>Sublimement coupée dans un satin rose poudré, la Robe Signature épouse la silhouette à la perfection. Une pièce iconique, conçue pour faire tourner les têtes du jour à la nuit.</p>
+      <ul class="spotlight-features">
+        <li>Satin de soie 100% naturel</li>
+        <li>Coupe ajustée, longueur midi</li>
+        <li>Fabriquée à la main à Paris</li>
+        <li>Disponible du 34 au 46</li>
+        <li>Numérotée et signée à la main</li>
+      </ul>
+      <a href="#" class="spotlight-cta">Ajouter au Panier ♥</a>
+    </div>
+  </div>
+
+  <!-- Subsection 2B — Angles / Gallery -->
+  <div class="product-angles">
+    <span class="script-tag">~ sous tous les angles ~</span>
+    <h3>Découvrez Chaque Détail</h3>
+    <p>De face, de dos, de profil — admirez la Robe Signature dans toute sa splendeur, capturée par les plus grands photographes de mode.</p>
+
+    <div class="angles-grid">
+      <div class="angle-card">
+        <div class="angle-card-img">
+          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=800&h=1000&fit=crop" alt="Vue de face">
+        </div>
+        <div class="angle-card-caption">
+          <span class="label">Vue de Face</span>
+          <span class="desc body-text">Décolleté plongeant et coupe ajustée</span>
+        </div>
+      </div>
+
+      <div class="angle-card">
+        <div class="angle-card-img">
+          <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=800&h=1000&fit=crop" alt="Vue de profil">
+        </div>
+        <div class="angle-card-caption">
+          <span class="label">Vue de Profil</span>
+          <span class="desc body-text">Silhouette fluide et élégante</span>
+        </div>
+      </div>
+
+      <div class="angle-card">
+        <div class="angle-card-img">
+          <img src="https://images.unsplash.com/photo-1485231183945-fffde7cc051e?w=800&h=1000&fit=crop" alt="Détail tissu">
+        </div>
+        <div class="angle-card-caption">
+          <span class="label">Détail Tissu</span>
+          <span class="desc body-text">Satin rose poudré au toucher soyeux</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================================================
+     SECTION 3 — CONCLUSION (Specs + Legal)
+=========================================================== -->
+<section class="conclusion">
+
+  <div class="conclusion-header">
+    <span class="script-tag">~ tout savoir ~</span>
+    <h2>Spécifications &amp; Détails</h2>
+    <p>Conçue avec soin, fabriquée avec amour. Voici tout ce qu'il faut savoir avant d'enfiler votre Robe Signature.</p>
+  </div>
+
+  <!-- Spec cards -->
+  <div class="specs-grid">
+    <div class="spec-card">
+      <span class="icon">✿</span>
+      <h4>Matière</h4>
+      <p class="body-text">Satin de soie 100% naturel, doublure en coton bio certifié OEKO-TEX.</p>
+    </div>
+    <div class="spec-card">
+      <span class="icon">✂</span>
+      <h4>Fabrication</h4>
+      <p class="body-text">Cousue à la main dans nos ateliers parisiens, 18 heures de travail par pièce.</p>
+    </div>
+    <div class="spec-card">
+      <span class="icon">♥</span>
+      <h4>Entretien</h4>
+      <p class="body-text">Nettoyage à sec uniquement. Repassage à basse température sur l'envers.</p>
+    </div>
+    <div class="spec-card">
+      <span class="icon">★</span>
+      <h4>Livraison</h4>
+      <p class="body-text">Gratuite en France dès 100 €. Retours offerts sous 30 jours.</p>
+    </div>
+  </div>
+
+  <!-- Detailed table -->
+  <div class="details-table">
+    <h3>Fiche Produit Complète</h3>
+    <dl>
+      <dt>Référence</dt>
+      <dd>BFC-2026-RS-001 / Édition numérotée 1 à 500</dd>
+
+      <dt>Composition</dt>
+      <dd>92% soie, 8% élasthanne — doublure 100% coton biologique</dd>
+
+      <dt>Dimensions</dt>
+      <dd>Longueur midi (110 cm sur taille 38). Disponible du 34 au 46.</dd>
+
+      <dt>Couleurs</dt>
+      <dd>Rose poudré (signature), rose fuchsia, rose dragée</dd>
+
+      <dt>Origine</dt>
+      <dd>Conçue et fabriquée à Paris, France 🇫🇷</dd>
+
+      <dt>Certifications</dt>
+      <dd>OEKO-TEX Standard 100, Origine France Garantie</dd>
+
+      <dt>Garantie</dt>
+      <dd>2 ans contre les défauts de fabrication, service de retouche à vie</dd>
+    </dl>
+  </div>
+
+  <!-- Legal -->
+  <div class="legal">
+    <h4>Mentions Légales &amp; Avertissements</h4>
+    <p class="body-text">Les photographies présentées sur ce site sont non contractuelles. Les nuances de rose peuvent légèrement varier selon les écrans et les bains de teinture. La Robe Signature est une création artisanale ; de légères variations entre les exemplaires témoignent de son authenticité.</p>
+    <p class="body-text">Barbie® et le logo Barbie sont des marques déposées de Mattel, Inc. Barbie Fashion Co est un concept fictif créé à des fins de démonstration uniquement et n'est en aucun cas affilié, sponsorisé ou approuvé par Mattel, Inc. ou ses filiales.</p>
+    <p class="body-text">Conformément au RGPD, vos données personnelles sont traitées avec le plus grand soin. Pour toute question relative à la protection des données, contactez-nous à confidentialite@barbiefashion.example. Conditions générales de vente disponibles sur simple demande.</p>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="brand">♥ Barbie Fashion Co ♥</div>
+    <div class="copy">© 2026 Barbie Fashion Co — Tous droits réservés. Fabriqué avec amour à Paris.</div>
+  </div>
+
+</section>
+
+</body>
+</html>
